@@ -1,6 +1,4 @@
-
-
-### 청크 지향 JpaPagingItemReader 레코드 중복 / 스킵 되는 문제
+### JpaPagingItemReader 사용시 레코드 중복 / 스킵 되는 문제
 
 ~~~kotlin
 // JpaPagingItemReader 의 일반적 구현체 ( Select 문 활용 )
