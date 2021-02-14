@@ -85,8 +85,6 @@ MariaDB[None] > show master status;
 +------------------+----------+--------------+------------------+
 ~~~
 
-
-
 ##### Slave DB Server Spec
 
 ~~~
@@ -129,10 +127,11 @@ replicate-ignore-db     = batch
 $ service mysql restart						# 설정 완료 후 재시작
 ~~~
 
-- Master DB 의 로그 File / position 및 유저를 활용해 DB 의 Master 설정
+- Master DB 의 로그 File / position 및 유저를 활용해 DB 의 Master 설정 및 연결 확인
 
 ~~~mariadb
 MariaDB[None] > CHANGE MASTER TO MASTER_HOST='마스터DB IP',MASTER_PORT=3306 , MASTER_USER='repl',MASTER_PASSWORD='1234', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=46862;
+MariaDB[None] > start slave;
 MariaDB[None] > show slave status \G;
 *************************** 1. row ***************************
                Slave_IO_State: Waiting for master to send event	# Connecting to Master 는 미연결 상태
