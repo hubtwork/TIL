@@ -2,9 +2,9 @@
 
 ---
 
-> ✔️ **테스트 환경 : CentOS 7.3**
+> ✔ **테스트 환경 : CentOS 7.3**
 >
-> ✔️ **Dependency : Yum**
+> ✔ **Dependency : Yum**
 
 
 
@@ -42,7 +42,7 @@ $ systemctl status mariadb		# MariaDB 상태확인
 #### 4. 로그인 및 비밀번호 설정
 
 ~~~bash
-$ mysql -u root -p 						# 초기엔 비밀번호 없음 
+$ mysql -u root 						# 초기엔 비밀번호 없음 
 # in MariaDB
 MariaDB[None] > use mysql;
 MariaDB[mysql] > update user set password=password('비밀번호') where user='root';

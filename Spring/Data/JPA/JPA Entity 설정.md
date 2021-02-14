@@ -1,6 +1,6 @@
 ### JPA Entity 관련 정보
 
-
+> DB : MariaDB 10.1
 
 #### Entity 기본 구성
 
@@ -37,6 +37,11 @@ class PipelinedMatch (
 
 }
 ~~~
+
+- 테이블명, 컬럼명에 대한 명시는 <span style="color: red">데이터베이스의 테이블을 하나의 Object</span> 로서 보는 JPA 생태계에서 중요함 ( 엔티티 클래스를 DB 에 대한 커서이자 DTO 로서 활용성을 극대화하는 것이 포인트 )
+- 테이블의 성능을 위해 **인덱스 컬럼**에 대한 명시를 통해 타겟 RDBMS 에 전달해줌
+- **String 변수**의 경우 기본적으로 <u>varchar 형</u> 으로 변환하기 때문에 대용량의 스트링 ( ex_ JsonString ) 등의 보관이 필요하다면 Text 로 명시해주는 것이 좋음 ( MariaDB의 경우 )
+- 엔티티 Bean 이 주입되었음이 확인되면 JPA 는 해당 DB 에 엔티티가 존재하지않거나, 구성이 다를 시 **Hibernate DDL** 을 통해 생성 / 변경함
 
 
 
