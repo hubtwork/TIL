@@ -11,16 +11,17 @@
 #### 1. Yum Repo 설정
 
 ~~~bash
-$ vi /etc/yum.repos.d/MariaDB.repo
+$ vim /etc/yum.repos.d/maria.repo
 ~~~
 
 >[mariadb]
 >name = MariaDB
->baseurl = http://yum.mariadb.org/10.4/centos7-amd64
+>baseurl = http://yum.mariadb.org/10.1/centos7-amd64
 >gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 >gpgcheck=1
 
 - 따로 원하는 버전을 설치하고 싶으면 baseUrl 의 버전명을 변경
+- OS 별로 설정 맞춰야 함
 
 #### 2. Yum install 및 설치 확인
 
@@ -34,9 +35,9 @@ $ mariadb --version 				# MariaDB 버전 확인
 #### 3. MariaDB 실행, 상태확인
 
 ~~~bash
-$ systemctl enable mariadb		# MariaDB 자동 재시작 설정
-$ systemctl start mariadb			# MariaDB 실행
-$ systemctl status mariadb		# MariaDB 상태확인
+$ systemctl enable mysql		# MariaDB 자동 재시작 설정
+$ systemctl start mysql			# MariaDB 실행
+$ systemctl status mysql		# MariaDB 상태확인
 ~~~
 
 #### 4. 로그인 및 비밀번호 설정
