@@ -15,7 +15,7 @@
 - 컨트롤러 등 트랜잭션이 종료되도 외부에서 영속성 컨텍스트 활용 가능
 - <span style="color:red">**BUT**</span> DB Connection 이 계속해서 유지되어있어야함, 이를 고려해 설정할 것 
 
-<img src="../../../assets/img/osv_true.png" alt="Imgur" style="zoom:70;" /> 
+<p align="center"><img src="../../../assets/img/osv_true.png" alt="Imgur" width="450" /></p> 
 
 #### 2. OSI : False
 
@@ -23,4 +23,4 @@
 - 트랜잭션이 종료되면 영속성 컨텍스트 또한 닫히므로 활용 불가
 - Batch 와 같은 DB 의 성능이 중요한 애플리케이션에 적합
 
-<img src="../../../assets/img/osv_false.png" alt="Imgur" style="zoom:25%;" />
+<p align="center"><img src="../../../assets/img/osv_false.png" alt="Imgur" width="450" /></p>

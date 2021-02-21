@@ -50,14 +50,14 @@ The partition table has been altered!
 - 스토리지 포맷
 
 ~~~bash
-$ mkfs.xfs /dev/xvdb1			# xfs 파티션 ( 고용량 파티션 지원 , EXT : 16TB 까지만 지원 ) 
+$ mkfs.xfs /dev/xvdb1	# xfs 파티션 ( 고용량 파티션 지원 , EXT : 16TB 까지만 지원 ) 
 ...
 ~~~
 
 - 스토리지 마운트 <span style="color:red">**[ 여기까지만 진행시 서버를 재부팅하면 마운팅이 해제됨 ]**</span>
 
 ~~~shell
-$ mkdir /mnt/v1		# 마운트할 디렉토리 생성
+$ mkdir /mnt/v1	# 마운트할 디렉토리 생성
 $ mount /dev/xvdb1 /mnt/v1	# 해당 디렉토리에 파티션 된 디스크 마운트
 ~~~
 

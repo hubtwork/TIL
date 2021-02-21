@@ -43,8 +43,8 @@
 OS : CentOS 7.3
 DB : MariaDB 10.1
 
-Replication DB : matcher							// 복제할 DB
-Replication-Ignore DB : batch					// 복제하지 말아야할 DB
+Replication DB : matcher	// 복제할 DB
+Replication-Ignore DB : batch	// 복제하지 말아야할 DB
 ~~~
 
 ##### Master DB Config
@@ -65,13 +65,13 @@ $ vim /etc/my.cnf
 [mysqld]
 ...
 ## Replication related settings
-log_bin_trust_function_creators = 1									# 프로시져 , 트리거 바이너리 로깅 ON
-log_bin                         = mysql-bin					# LogBin 설정
-server-id                       = 1									# 서버 ID 
-max_binlog_size                 = 512M							# 바이너리로그 최대 크기
+log_bin_trust_function_creators = 1	# 프로시져 , 트리거 바이너리 로깅 ON
+log_bin                         = mysql-bin	# LogBin 설정
+server-id                       = 1	# 서버 ID 
+max_binlog_size                 = 512M	# 바이너리로그 최대 크기
 ...
 
-$ service mysql restart						# 설정 완료 후 재시작
+$ service mysql restart	# 설정 완료 후 재시작
 ~~~
 
 - MariaDB 콘솔 내에서 **Master status** 조회. File 및 Position 확인 ( Slave 에 입력해야함 )
@@ -108,11 +108,11 @@ MariaDB[None] > flush privileges;
 $ vim /etc/my.cnf
 [mysqld]
 ...
-#       Replication - slave setting
-server-id               = 2												# Master 와 서버 아이디를 다르게 해 구분 
-log_bin                 = mysql-bin								# LogBin 설정
-log_slave_updates																	# 관련 바이너리 로그를 가질 수 있도록 on
-read_only               = 1												# Slave DB 는 Read-Only 로 쓸 것이라고 명시
+# Replication - slave setting
+server-id               = 2	# Master 와 서버 아이디를 다르게 해 구분 
+log_bin                 = mysql-bin	# LogBin 설정
+log_slave_updates	# 관련 바이너리 로그를 가질 수 있도록 on
+read_only               = 1	# Slave DB 는 Read-Only 로 쓸 것이라고 명시
 
 # replicate-do-db : replication 할 데이터베이스 
 # replicate-ignore-db : replication 하지 않을 데이터베이스
@@ -124,7 +124,7 @@ replicate-ignore-db     = performance_schema
 replicate-ignore-db     = batch
 ...
 
-$ service mysql restart						# 설정 완료 후 재시작
+$ service mysql restart 	# 설정 완료 후 재시작
 ~~~
 
 - Master DB 의 로그 File / position 및 유저를 활용해 DB 의 Master 설정 및 연결 확인
@@ -144,7 +144,7 @@ MariaDB[None] > show slave status \G;
                Relay_Log_File: mysql-relay-bin.000002
                 Relay_Log_Pos: 857
         Relay_Master_Log_File: mysql-bin.000001
-             Slave_IO_Running: Yes								# Yes 가 아닌 Connecting 일 시, 아래 Error 확인 후 개선
+             Slave_IO_Running: Yes 	# Yes 가 아닌 Connecting 일 시, 아래 Error 확인 후 개선
             Slave_SQL_Running: Yes
               Replicate_Do_DB: matcher
           Replicate_Ignore_DB: test,information_schema,mysql,performance_schema,batch

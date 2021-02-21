@@ -52,21 +52,21 @@ plugins {
 }
 // 전체 프로젝트에 대한 공통 영역
 allprojects {
-  	// Dependency repository 정의
+// Dependency repository 정의
     repositories {
         mavenCentral()
     }
 }
 // 당 프로젝트에서 관리할 모든 모듈들의 공통 영역
 subprojects {
-  	// 참조된 플러그인 적용
+// 참조된 플러그인 적용
     apply(plugin="kotlin")
     apply(plugin="org.springframework.boot")
     apply(plugin="io.spring.dependency-management")
     apply(plugin="org.jetbrains.kotlin.plugin.spring")
 
     group = "com.hubtwork"
-		// 모든 프로젝트에 대해 해당 dependency가 적용됨
+// 모든 프로젝트에 대해 해당 dependency가 적용됨
     dependencies {
         // jpa
         implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -100,15 +100,15 @@ subprojects {
 project(":katarina-core") {
     val bootJar: BootJar by tasks
     val jar: Jar by tasks
-		// 공통 모듈의 경우, SpringBoot Application 으로 실행하지 않고 라이브러리로서 쓰기 때문에 bootJar 는 disable
-  	// Spring Boot 에서 bootRepackage > bootJar 로 변경되면서 jar 를 enable 하지 않으면 빌드 되지 않는 이슈가 발생
+// 공통 모듈의 경우, SpringBoot Application 으로 실행하지 않고 라이브러리로서 쓰기 때문에 bootJar 는 disable
+// Spring Boot 에서 bootRepackage > bootJar 로 변경되면서 jar 를 enable 하지 않으면 빌드 되지 않는 이슈가 발생
     bootJar.enabled = false
     jar.enabled = true
 
     version = "1.0-SNAPSHOT"
-		// 해당 모듈에서만 사용할 의존성 정의
+// 해당 모듈에서만 사용할 의존성 정의
     dependencies {
-        // Test
+// Test
         testImplementation("org.springframework.boot:spring-boot-starter-test")
     }
 
@@ -118,7 +118,7 @@ project(":katarina-batch") {
     apply(plugin="org.jetbrains.kotlin.plugin.jpa")
 
     version = "1.0.A"
-		// 해당 모듈에서만 사용할 의존성 정의
+// 해당 모듈에서만 사용할 의존성 정의
     dependencies {
         implementation(project(":katarina-core"))
         // Spring Batch
@@ -133,7 +133,7 @@ project(":katarina-batch") {
 project(":katarina-api") {
 
     version = "1.0-SNAPSHOT"
-		// 해당 모듈에서만 사용할 의존성 정의
+// 해당 모듈에서만 사용할 의존성 정의
     dependencies {
         implementation(project(":katarina-core"))
     }
