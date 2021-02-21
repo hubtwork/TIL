@@ -51,13 +51,13 @@ Content-Type: application/json;charset=utf-8
 - 1 Request 1 Response 을 개선해 **multiple request** 지원
   - **HTTP1.0** 과 달리 기본적으로 **Persistent-Connection** 지원. Connection 헤더는 필요에 의해 단일연결만 수행해야할 경우만 사용
 
-<img src="../../assets/img/http1.1.png" alt="Imgur" style="zoom:100;" /> 
+<p align="center"><img src="../../assets/img/http1.1.png" alt="Imgur" width="400"/> </p>
 
 - 기존의 1 Requst 1 Connection 구조를 개선해 **pipelining** 지원
   - Request 에 대한 Response 를 기다리는 것 대신에, 여러개의 Request 를 **하나의 TCP/IP 패킷에 연속적으로 Packing** 해 전송
   - 하나의 Connection 으로 여러개의 Request/Response 쌍을 처리하기 때문에 **Network Latency 를 효과적으로 줄임**
 
-<img src="../../assets/img/http_pipelining.png" alt="Imgur" style="zoom:100;" />
+<p align="center"><img src="../../assets/img/http_pipelining.png" alt="Imgur" width="350" /></p>
 
 - **HTTP 통신 확장** - Put / Delete / Trace / Options 지원
 - **HTTP 헤더 확장** - 다양한 헤더가 추가되었으며 **Request~Response** 까지의 시간을 표기하는 Age 가 추가됨
@@ -78,7 +78,7 @@ Content-Type: application/json;charset=utf-8
 - **SPDY** - 구글에서 HTTP 프로토콜의 전송을 재정의한 고속 프로토콜
   - 제한 없는 동시 요청이 가능하며 Overhead 문제로 Domain Sharding 을 사용하지 않는 것을 추천
 
-<img src="../../assets/img/http_spdy.png" alt="Imgur" style="zoom:100;" />
+<p align="center"><img src="../../assets/img/http_spdy.png" width="300" /></p>
 
 - **Image Spriting** - 다수의 이미지 요청 대신 웹페이지에서 사용되는 이미지들을 모아 하나의 이미지 파일로 만들고 CSS 에서는 좌표값을 이용해 사용하도록 함
 - **CSS/JS Compress** - CSS / JS 파일의 용량을 줄여 HTTP 통신 데이터의 크기를 축소시킴
@@ -93,7 +93,7 @@ Content-Type: application/json;charset=utf-8
 - **Multiplexing** - 여러 데이터 요청을 병렬로 처리함으로서 연결의 개수를 효과적으로 줄임
   - HOL Blocking 의 원천적 해결 및 Domain Sharding 의 필요성을 제거
 
-<img src="../../assets/img/http2_multiplex.png" alt="Imgur" style="zoom:100;" />
+<p align="center"><img src="../../assets/img/http2_multiplex.png" alt="Imgur" width="300" /></p>
 
 - **Server Push** - 서버에서 클라이언트가 요청한 리소스 내에서 필요로하는 리소스들을 캐싱해두고 알아서 보내주는 **Push Promise** 를 도입
   - 예를 들어 **HTTP 1.1** 의 경우 HTML 페이지를 받은 후 그 안에 필요한 리소스들을 다시 요청하여 가져오는 과정이 일어남

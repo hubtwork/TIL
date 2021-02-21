@@ -41,30 +41,31 @@
 
 - **New Item > Free Style Project** 진행
 
-<img src="../../assets/img/jenkins_batch_newitem.png" alt="Imgur" style="zoom:70;" />
+<p align="center"><img src="../../assets/img/jenkins_batch_newitem.png" alt="Imgur" width="450" /></p>
 
 - **Github Project** 설정
   - 해당하는 Github 프로젝트 주소 기입
 
-<img src="../../assets/img/jenkins_batch_github.png" alt="Imgur" style="zoom:70;" />
+<p align="center"><img src="../../assets/img/jenkins_batch_github.png" alt="Imgur" width="450" />
+</p>
 
 - **Source Code Management**
   - 해당 Git Repository 기입 
   - Credentials ADD 를 통해 본인의 깃허브 아이디 / 비밀번호를 이용한 인증정보 생성
 
-<img src="../../assets/img/jenkins_batch_sourcecode.png" alt="Imgur" style="zoom:70;" />
+<p align="center"><img src="../../assets/img/jenkins_batch_sourcecode.png" alt="Imgur" width="450" /></p>
 
 - **Build Triggers** 설정
   - Cron 을 사용해 빌드가 주기적으로 일어나게끔 지정
   - Jenkins 에서는 해당 크론 명령어를 해석해 아래에 빌드 예정시점을 설명해주니 참고하여 작성
 
-<img src="../../assets/img/jenkins_batch_build.png" alt="Imgur" style="zoom:70;" />
+<p align="center"><img src="../../assets/img/jenkins_batch_build.png" alt="Imgur" width="500" /></p>
 
 - Build 후 **Execute Shell** 설정
   - Build 탭의 ADD Build Step > Execute Shell
   - 빌드된 jar 파일을 실행할 shell script 작성
 
-<img src="../../assets/img/jenkins_batch_build_shell.png" alt="Imgur" style="zoom:70;" />
+<p align="center"><img src="../../assets/img/jenkins_batch_build_shell.png" alt="Imgur" width="500" /></p>
 
 - **Project > Build Now** 실행
 
@@ -75,4 +76,4 @@
 - 아래와 같이 Build History 에 지정한 Cron 에 따라 자동으로 Batch Job 이 스케쥴링됨
 - 만약 지정 스케쥴에 빌드를 시도하는데 이전 빌드가 아직 진행중이라면, 해당 빌드는 Build Queue 에서 대기
 
-<img src="../../assets/img/jenkins_batch_build_history.png" alt="Imgur" style="zoom:100;" />
+<p align="center"><img src="../../assets/img/jenkins_batch_build_history.png" alt="Imgur" width="300" /></p>
