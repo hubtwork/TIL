@@ -1,5 +1,11 @@
 ### JpaPagingItemReader 을 이용해 동일 레코드를 조회, 수정할 시 발생하는 문제
 
+> ✔ **IDE : IntelliJ Ultimate 2020.3.2**
+>
+> ✔ **OS :  macOS Big Sur 11.1**
+>
+> ✔ **Lang: Kotlin**
+
 
 
 #### Background

@@ -1,5 +1,13 @@
 ### JpaPagingItemReader 사용시 레코드 중복 / 스킵 되는 문제
 
+> ✔ **IDE : IntelliJ Ultimate 2020.3.2**
+>
+> ✔ **OS :  macOS Big Sur 11.1**
+>
+> ✔ **Lang: Kotlin**
+
+
+
 ~~~kotlin
 // JpaPagingItemReader 의 일반적 구현체 ( Select 문 활용 )
 private fun matchListItemReader() : JpaPagingItemReader<MatchList> {

@@ -1,5 +1,13 @@
 ### Processor 에서 LIST\<T> Return 후 JpaItemWriter Write ?
 
+>✔ **IDE : IntelliJ Ultimate 2020.3.2**
+>
+>✔ **OS :  macOS Big Sur 11.1**
+>
+>✔ **Lang: Kotlin**
+
+
+
 ~~~java
 // JpaItemWriter 의 write 메소드
 @Override
