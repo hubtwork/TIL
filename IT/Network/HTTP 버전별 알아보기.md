@@ -66,7 +66,7 @@ Content-Type: application/json;charset=utf-8
 
 #### HTTP/1.1 의 단점
 
-- 여전히 하나의 Request 에 대한 Response 처리 → **다수의 리소스 처리 및 데이터 전송 **등에서 <span style="color:red">성능 저하 이슈</span> 발생
+- 여전히 하나의 Request 에 대한 Response 처리 → **다수의 리소스 처리 및 데이터 전송 **등에서 <u>성능 저하 이슈</u> 발생
 - 요청별 TCP 3-way HandShaking 이 일어남 → **RTT(Round Trip Time) 증가, 네트워크 지연**
 - **Head Of Line Blocking** - Piepelining 을 통해 여러 리소스를 요청할 때 특정 리소스의 처리 지연이 발생하면 다음 리소스들은 계속 대기 상태
 - **Cookie 에 의한 Heavy Header** - 1 Request 1 Header 구조 및 Cookie 정보 또한 중복 전송되기 때문에 요청 값보다 헤더가 큰 경우가 발생

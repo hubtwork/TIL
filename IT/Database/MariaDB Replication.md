@@ -28,9 +28,9 @@
 
 - Master : 지정된 데이터베이스에 대해 **Insert / Update / Delete** 등이 발생했을 때 **바이너리 로그**를 생성 후 Slave 로 전달
 - Slave : Master 로부터 **바이너리 로그** 를 전달받아 데이터베이스에 반영
-- **<span style="color: blue">용도 : DB 백업, 부하 분산</span>**
+- **용도 : DB 백업, 부하 분산**
 
-> <span style="color: red"> **주의** </span>
+> **주의**
 >
 > - **[ 일관성 ]** Master , Slave Connect 전에 DB 상태가 같아야함 ( Dump 이용 ). 
 >
