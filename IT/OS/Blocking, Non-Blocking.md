@@ -1,5 +1,11 @@
 ### Blocking I/O & Non-Blocking I/O
 
+> Block, Non-Block 의 차이는 크게 `호출된 대상` 의 제어가 가능한지 여부에 따라 구분 
+>
+> **Blocking** - `호출된 대상` 이 제어권을 가져가 작업이 끝날 때까지 대기
+>
+> **Non-Blocking** - `호출된 대상` 이 작업이 완료되기 전에 제어권을 `호출한 주체` 에게 제어권을 반환함
+
 
 
 #### Background
