@@ -1,4 +1,4 @@
-### RestTemplate
+### RestTemplate 배열 형식의 Json Mapping
 
 > ✔ **IDE : IntelliJ Ultimate 2020.3.2**
 >
