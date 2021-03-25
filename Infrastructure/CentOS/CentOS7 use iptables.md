@@ -13,7 +13,7 @@
 
 #### Remove firewalld
 
-- 이전버전의 CentOS 와 같이 `iptables` 의 온전한 사용을 위해 `firewalld` 를 종료시키고 제거함
+- 이전버전의 CentOS 와 같이 `iptables` 의 온전한 사용을 위해 `firewalld` 를 종료시키고 시스템 유닛에서 제거함
 
 ~~~shell
 # firewalld 가 active 상태라면 종료
@@ -35,7 +35,7 @@ $ systemctl list-units | grep firewalld
 
 #### Install iptables
 
-- `iptables` 설치 진행 및 
+- `iptables` 설치 진행 및 시스템 유닛 등록해 사용
 
 ~~~shell
 $ yum -y install iptables-services
