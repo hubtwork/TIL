@@ -19,6 +19,8 @@
   - `isEmpty` - 스택이 비었는지 여부를 반환
   - `size` - 스택의 크기 반환
 
+  <p align="center"><img src="../../assets/img/stack.png" alt="Imgur" width="400" /></p> 
+
 - **Stack Implementation**
 
   - **배열을 이용한 구현**
@@ -27,60 +29,83 @@
 
   ~~~python
   class Stack:
-    def __init__(self):
-      self.stack = []
+      def __init__(self):
+          self.stack = []
+          self.error = "Error - Stack is Empty"
       
-    def push(self, data):
-      self.stack.append(data)
+      def push(self, data):
+          self.stack.append(data)
       
-    def pop(self):
-      return self.stack.pop()
+      def pop(self):
+          if self.isEmpty():
+              return self.error
+          return self.stack.pop()
     
-   	def peek(self):
-      return self.stack[-1]
+      def peek(self):
+          if self.isEmpty():
+              return self.error
+          return self.stack[-1]
     
-    def isEmpty(self):
-      return ( len(self.stack) == 0 )
+      def isEmpty(self):
+          return True if len(self.stack) == 0 else False
     
-    def size(self):
-      return len(self.stack)
+      def size(self):
+          return len(self.stack)
+  
+      # Object To String Override
+      def __str__(self):
+          return ' < '.join(map(str, self.stack))
   ~~~
 
   - **연결리스트를 이용한 구현**
 
+  > 스택의 경우 <u>동적배열을 지원하지 않는 언어</u> 의 경우 배열을 이용한 구현 시 `peek` 포인터 인덱스를 이용해 구현해야하기 때문에 **언어 의존적**
+  >
   > 동적 배열을 지원하지 않는 언어의 경우 **크기 제한** 이 문제사항이 될 수 있으며 노드 개수만큼 메모리를 사용하기 때문에 **메모리 효율성** 에 유리함
+  >
+  > **구현**
+  >
+  > - 노드 포인터가 항상 `peek` 를 가리킴
+  > - `push` 할 때 기존 `peek` 가 `next` 포인터로, 새 노드가 `peek` 로 교체
+  > - `pop` 할 때 `peek` 노드를 추출하고 다음 노드를 새로운 `peek` 로 교체
 
   ~~~python
-  class Node:
-    def __init__(self, data):
-      self.data = data
-      self.next = None
+  class NodeStack:
+      def __init__(self):
+          self.stack = None
+          self.error = "Error - Stack is Empty"
   
-  class Stack:
-    def __init__(self):
-      self.stack = None
-      
-   	def push(self, node):
-      node.next = self.stack
-      self.stack = node
-        
-   	def pop(self):
-      if self.stack == None:
-        return "No Data In Stack"
-      else:
-        data = self.stack.data
-        self.stack = self.stack.next
-        return data
-      
-   	def peek(self):
-      if self.stack == None:
-        return "No Data In Stack"
-      else:
-        return self.stack.data
-    
-    def isEmpty(self):
-      return True if self.stack == None else False
+      def isEmpty(self):
+          return True if self.stack == None else False
+      # fetch peek data
+      def peek(self):
+          if self.isEmpty():
+              return self.error
+          return self.stack.data
+  
+      def push(self, data):
+          node = Node(data)
+          node.next = self.stack
+          self.stack = node
+  
+      def pop(self):
+          if self.isEmpty():
+              return self.error
+          data = self.stack.data
+          self.stack = self.stack.next
+          return data
+  
+      def __str__(self):
+          if self.isEmpty():
+              return self.error
+          # fetch all data in stack
+          s = []
+          node = self.stack
+          while node != None:
+              s.append(node.data)
+              node = node.next
+          return ' < '.join(map(str, s[::-1]))
   ~~~
 
-<p align="center"><img src="../../assets/img/stack.png" alt="Imgur" width="400" /></p> 
+
 
