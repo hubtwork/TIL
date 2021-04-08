@@ -16,7 +16,7 @@
 
 - `kotlin` 에서 **no-arg** 플러그인을 래핑해 제공하는 플러그인
 - `@Entity` , `@Embedded`, `@Embeddable` 등의 **Annotation** 을 갖는 클래스에 대해 기본 생성자를 만들어 줌
-- **사용** - gradle Query DSL 을 이용해 플러그인 적용
+- **사용** - gradle Kotlin DSL 을 이용해 플러그인 적용
 
 ~~~kotlin
 plugins {
@@ -36,7 +36,7 @@ plugins {
 - `Kotlin` 으로 작업을 하다보면 기본 생성자 문제 뿐만 아니라 상속에 관해서도 문제가 발생함
 - **이유 )** `Kotlin` 의 class 는 기본적으로 `final` 이어 **Spring** 의 클래스들을 상속해 이용하기 위해서는 `open class` 로 사용하여야 함
 - 이를 위해 `@Component` , `@Transactional` , `@Configuration` 등의 **Annotation** 을 갖는 클래스에 대해 자동으로 `all-open` 적용을 지원해줌
-- **사용** - gradle Query DSL 을 이용해 플러그인 적용
+- **사용** - gradle Kotlin DSL 을 이용해 플러그인 적용
 
 ~~~kotlin
 plugins {
