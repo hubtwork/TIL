@@ -1,5 +1,3 @@
-l
-
 ### TypeScript ) Top-Level 'await' ... error 다루기
 
 >✔ **IDE : Visual Studio Code v 1.55.0**
